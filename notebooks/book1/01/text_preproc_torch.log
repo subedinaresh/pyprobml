@@ -1,0 +1,48 @@
+An error occurred while executing the following cell:
+------------------
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(seed=1)
+import math
+
+try:
+    import torch
+except ModuleNotFoundError:
+    %pip install torch
+    import torch
+from torch import nn
+from torch.nn import functional as F
+from torch.utils import data
+
+!mkdir figures # for saving plots
+------------------
+
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+/tmp/ipykernel_2977/3490541807.py in <module>
+      7 try:
+----> 8     import torch
+      9 except ModuleNotFoundError:
+
+ModuleNotFoundError: No module named 'torch'
+
+During handling of the above exception, another exception occurred:
+
+ImportError                               Traceback (most recent call last)
+/tmp/ipykernel_2977/3490541807.py in <module>
+      9 except ModuleNotFoundError:
+     10     get_ipython().run_line_magic('pip', 'install torch')
+---> 11     import torch
+     12 from torch import nn
+     13 from torch.nn import functional as F
+
+~/miniconda3/envs/py37/lib/python3.7/site-packages/torch/__init__.py in <module>
+    197     if USE_GLOBAL_DEPS:
+    198         _load_global_deps()
+--> 199     from torch._C import *  # noqa: F403
+    200 
+    201 # Appease the type checker; ordinarily this binding is inserted by the
+
+ImportError: /github/home/miniconda3/envs/py37/lib/python3.7/site-packages/torch/lib/libtorch_cuda.so: cannot read file data
+ImportError: /github/home/miniconda3/envs/py37/lib/python3.7/site-packages/torch/lib/libtorch_cuda.so: cannot read file data
